@@ -1,0 +1,94 @@
+/* Paleta GymFit (3 colores base + 1 tono claro del verde agua):
+   carbón     #1B2430 -> cabecera, menús, texto y elementos de aviso
+   verde agua #0F766E -> acento: acción principal, secciones, selección
+              #2DD4BF -> tono claro del mismo verde (solo sobre fondo carbón)
+   blanco     #FFFFFF -> tarjetas y campos (fondo de app: tinte muy suave #F2F8F7)
+   Contraste: blanco/carbón 15:1 · blanco/verde agua 5.5:1 · verde claro/carbón 9:1 */
+
+.root {
+    -carbon: #1B2430;
+    -agua: #0F766E;
+    -agua-claro: #2DD4BF;
+    -fondo: #F2F8F7;
+    -peligro: #1B2430;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-base: #FFFFFF;
+    -fx-accent: -agua;
+    -fx-focus-color: -agua;
+    -fx-faint-focus-color: transparent;
+    -fx-background-color: -fondo;
+    -fx-text-fill: -carbon;
+}
+.label { -fx-text-fill: -carbon; }
+
+/* ---------- Cabecera de marca ---------- */
+.cabecera { -fx-background-color: -carbon; }
+.marca-gym  { -fx-text-fill: white;   -fx-font-size: 24px; -fx-font-weight: 900; }
+.marca-fit  { -fx-text-fill: #2DD4BF; -fx-font-size: 24px; -fx-font-weight: 900; }
+.marca-sub  { -fx-text-fill: #C9D1DB; -fx-font-size: 12px; -fx-font-weight: bold; -fx-padding: 8 0 0 6; }
+.cabecera-sub { -fx-text-fill: #C9D1DB; -fx-font-size: 13px; }
+
+/* ---------- Menús ---------- */
+.menu-bar { -fx-background-color: -carbon; -fx-border-color: #3A4656; -fx-border-width: 1 0 0 0; -fx-padding: 0 16 0 16; }
+.menu-bar .label { -fx-text-fill: white; }
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:showing { -fx-background-color: -agua; }
+.menu-item:focused { -fx-background-color: -agua; }
+.menu-item:focused .label { -fx-text-fill: white; }
+.item-peligro .label { -fx-text-fill: -peligro; }
+.item-peligro:focused .label { -fx-text-fill: white; }
+
+/* ---------- Barra de herramientas ---------- */
+.tool-bar { -fx-background-color: white; -fx-border-color: -agua; -fx-border-width: 0 0 3 0; -fx-padding: 8 24 8 24; }
+.tool-bar .button { -fx-background-color: -fondo; -fx-border-color: #C5CCD6; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 6 14 6 14; -fx-text-fill: -carbon; }
+.tool-bar .button:hover { -fx-border-color: -agua; -fx-background-color: #E6F7F5; }
+
+/* ---------- Contenido ---------- */
+.scroll-limpio { -fx-background-color: transparent; -fx-background: -fondo; -fx-padding: 0; }
+.scroll-limpio > .viewport { -fx-background-color: -fondo; }
+.contenido { -fx-background-color: -fondo; }
+.card { -fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #D5DAE0 #D5DAE0 #D5DAE0 #D5DAE0; -fx-border-radius: 8; -fx-effect: dropshadow(gaussian, rgba(27,36,48,0.12), 10, 0, 0, 2); }
+
+.titulo { -fx-font-size: 28px; -fx-font-weight: 900; -fx-text-fill: -carbon; }
+.subtitulo { -fx-text-fill: #4A5568; }
+.seccion { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: -agua; -fx-padding: 8 0 0 0; }
+.campo-label { -fx-font-weight: normal; }
+.ayuda { -fx-font-size: 12px; -fx-text-fill: #4A5568; }
+
+.text-field, .combo-box, .date-picker { -fx-border-color: #B8C0CA; -fx-border-radius: 4; -fx-background-radius: 4; }
+.text-field:focused, .combo-box:focused, .date-picker:focused { -fx-border-color: -agua; -fx-border-width: 2; }
+.date-picker.campo-error .text-field { -fx-border-color: -peligro; -fx-border-width: 2; -fx-border-radius: 4; }
+
+.radio-button:selected .dot { -fx-background-color: -agua; }
+.radio-button:selected .radio { -fx-border-color: -agua; }
+.check-box:selected .box { -fx-background-color: -agua; -fx-border-color: -agua; }
+.check-box:selected .mark { -fx-background-color: white; }
+
+/* ---------- Botones del formulario ---------- */
+.boton-primario { -fx-background-color: -agua; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 15px; -fx-padding: 10 30 10 30; -fx-background-radius: 4; }
+.boton-primario:hover { -fx-background-color: #0B5B55; }
+.boton-secundario { -fx-background-color: white; -fx-text-fill: -carbon; -fx-border-color: #B8C0CA; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 9 20 9 20; }
+.boton-secundario:hover { -fx-border-color: -carbon; }
+.boton-peligro { -fx-background-color: white; -fx-text-fill: -carbon; -fx-border-color: -carbon; -fx-border-width: 1; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 9 16 9 16; }
+.boton-peligro:hover { -fx-background-color: #E6F7F5; }
+
+/* ---------- Tabla ---------- */
+.tabla-titulo { -fx-font-size: 20px; -fx-font-weight: 900; -fx-text-fill: -carbon; }
+.table-view { -fx-border-color: #D5DAE0; -fx-border-radius: 6; -fx-background-radius: 6; }
+.table-view .column-header-background { -fx-background-color: -carbon; }
+.table-view .column-header { -fx-background-color: -carbon; -fx-border-color: #3A4656; -fx-border-width: 0 1 0 0; }
+.table-view .column-header .label { -fx-text-fill: white; -fx-font-weight: bold; }
+.table-view .filler { -fx-background-color: -carbon; }
+.table-row-cell:filled:selected { -fx-background-color: -agua; }
+.table-row-cell:filled:selected .table-cell { -fx-text-fill: white; }
+
+/* ---------- Mensaje de error ---------- */
+.error-box { -fx-background-color: white; -fx-border-color: -carbon; -fx-border-width: 1 1 1 6; -fx-border-radius: 6; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(27,36,48,0.18), 10, 0, 0, 2); }
+.error-icono { -fx-text-fill: -agua; -fx-font-size: 20px; }
+.error-titulo { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: -peligro; }
+.error-texto { -fx-text-fill: -carbon; }
+
+/* ---------- Barra de estado ---------- */
+.estado { -fx-background-color: -carbon; }
+.estado .label { -fx-text-fill: white; -fx-font-size: 12px; }
