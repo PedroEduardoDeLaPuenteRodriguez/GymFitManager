@@ -41,7 +41,6 @@ public class GymFitController {
                 new Socio("Luis Pérez", "21/07/2001", "Básica"),
                 new Socio("Marta Gómez", "30/11/1988", "Plus"),
                 new Socio("José Díaz", "02/02/2005", "Joven")));
-        // En Scene Builder el error se ve (para el diseño); al ejecutar empieza oculto
         ocultarError();
     }
 
@@ -74,7 +73,6 @@ public class GymFitController {
             return;
         }
 
-        // Todo correcto: se da de alta el socio
         String nombreCompleto = (tfNombre.getText().trim() + " " + tfApellido1.getText().trim()
                 + " " + tfApellido2.getText().trim()).trim();
         RadioButton cuota = (RadioButton) grupoCuota.getSelectedToggle();
@@ -94,7 +92,6 @@ public class GymFitController {
 
     @FXML
     private void onLimpiar() {
-        // Acción destructiva: pide confirmación con botones con verbos
         ButtonType limpiar = new ButtonType("Limpiar formulario", ButtonBar.ButtonData.OK_DONE);
         ButtonType cancelar = new ButtonType("Cancelar", ButtonBar.ButtonData.CANCEL_CLOSE);
         Alert alerta = new Alert(Alert.AlertType.CONFIRMATION,
@@ -132,7 +129,6 @@ public class GymFitController {
         ckTaquilla.setSelected(false); ckToalla.setSelected(false); ckParking.setSelected(false);
     }
 
-    /** Modelo mínimo para la tabla (necesita getters públicos para PropertyValueFactory). */
     public static class Socio {
         private final String nombre, fechaNacimiento, cuota;
         public Socio(String nombre, String fechaNacimiento, String cuota) {
